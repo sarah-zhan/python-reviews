@@ -157,11 +157,11 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 ''')
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
-option1 = input('left of right? ').lower()
+option1 = input('You are at a crossroad, where do you want to go, left of right?\n ').lower()
 if option1 == 'left':
-   option2 = input('swim or wait? ').lower()
+   option2 = input('You have come to a lake. Do you want to swim or wait?\n ').lower()
    if option2 == 'wait':
-      option3 = input('Which door? red, blue or yellow? ').lower()
+      option3 = input('You are in front of 3 doors. Which door would you choose red, blue or yellow?\n ').lower()
       if option3 == 'red':
          print('Burned by fire. Game Over')
       elif option3 == 'yellow':
