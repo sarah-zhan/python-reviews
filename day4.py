@@ -29,5 +29,28 @@ names = names_string.split(", ")
 
 #Write your code below this line 👇
 selected_index = random.randint(0, len(names) - 1)
-selected_person = names[selected_index]
+selected_person = names[selected_index] #random.choice(names)
 print(f'{selected_person} is going to buy the meal today!')
+
+
+# 🚨 Don't change the code below 👇
+row1 = ["⬜️","️⬜️","️⬜️"]
+row2 = ["⬜️","⬜️","️⬜️"]
+row3 = ["⬜️️","⬜️️","⬜️️"]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this row 👇
+position_list = list(position)
+row = int(position_list[1]) - 1
+col_index = int(position_list[0]) - 1
+map[row][col_index] = 'X'
+
+
+
+#Write your code above this row 👆
+
+# 🚨 Don't change the code below 👇
+print(f"{row1}\n{row2}\n{row3}")
