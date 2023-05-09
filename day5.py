@@ -76,7 +76,7 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 password = []
 #get letters
 for n in range(0, nr_letters):
-  random_letter_index = random.randint(0, len(letters) - 1)
+  random_letter_index = random.randint(0, len(letters) - 1) # we can use random.choice(letters)
   password.append(letters[random_letter_index])
 
 #get numbers
@@ -90,7 +90,7 @@ for n in range(0, nr_symbols):
   password.append(symbols[random_symbol_index])
 
 #Eazy Level - Order not randomised:
-print(''.join(password))
+print(''.join(password))  #we can also do a for loop and concat each
 
 #Hard Level - Order of characters randomised:
 shuffle(password)
