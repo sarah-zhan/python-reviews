@@ -107,7 +107,7 @@ if int(choice_human) == 0:
         print(f'Computer choice is Paper\n{paper}')
         print('You lose.')
     else:
-        print(f'Both are {rock}\nIt is a tie.')
+        print(f'Both are Rock\n{rock}\nIt is a tie.')
 elif int(choice_human) == 1:
     if choice_computer == 2:
         print(f'Your choice is Paper\n{paper}')
@@ -118,7 +118,7 @@ elif int(choice_human) == 1:
         print(f'Computer choice is Rock\n{rock}')
         print('You win.')
     else:
-        print(f'Both are {paper}\nIt is a tie.')
+        print(f'Both are Paper\n{paper}\nIt is a tie.')
 elif int(choice_human) == 2:
     if choice_computer == 1:
         print(f'Your choice is Scissors\n{scissors}')
@@ -129,4 +129,6 @@ elif int(choice_human) == 2:
         print(f'Computer choice is Rock\n{rock}')
         print('You lose.')
     else:
-        print(f'Both are {scissors}\nIt is a tie.')
+        print(f'Both are Scissors\n{scissors}\nIt is a tie.')
+else:
+    print('It is an invalid number. Choose 0, 1, or 2.')
