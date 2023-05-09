@@ -53,3 +53,80 @@ map[row][col_index] = 'X'
 
 # 🚨 Don't change the code below 👇
 print(f"{row1}\n{row2}\n{row3}")
+
+
+# Start the game by asking the player:
+
+# "What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."
+
+# From there you will need to figure out:
+
+# How you will store the user's input.
+# How you will generate a random choice for the computer.
+# How you will compare the user's and the computer's choice to determine the winner (or a draw).
+# And also how you will give feedback to the player.
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+choice_human = input('What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n')
+choice_computer = random.randint(0, 2)
+
+if int(choice_human) == 0:
+    if choice_computer == 2:
+        print(f'Your choice is Rock\n{rock}')
+        print(f'Computer choice is Scissors\n{scissors}')
+        print('You win.')
+    elif choice_computer == 1:
+        print(f'Your choice is Rock\n{rock}')
+        print(f'Computer choice is Paper\n{paper}')
+        print('You lose.')
+    else:
+        print(f'Both are {rock}\nIt is a tie.')
+elif int(choice_human) == 1:
+    if choice_computer == 2:
+        print(f'Your choice is Paper\n{paper}')
+        print(f'Computer choice is Scissors\n{scissors}')
+        print('You lose.')
+    elif choice_computer == 0:
+        print(f'Your choice is Paper\n{paper}')
+        print(f'Computer choice is Rock\n{rock}')
+        print('You win.')
+    else:
+        print(f'Both are {paper}\nIt is a tie.')
+elif int(choice_human) == 2:
+    if choice_computer == 1:
+        print(f'Your choice is Scissors\n{scissors}')
+        print(f'Computer choice is Paper\n{paper}')
+        print('You win.')
+    elif choice_computer == 0:
+        print(f'Your choice is Scissors\n{scissors}')
+        print(f'Computer choice is Rock\n{rock}')
+        print('You lose.')
+    else:
+        print(f'Both are {scissors}\nIt is a tie.')
