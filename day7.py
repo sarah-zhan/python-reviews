@@ -37,7 +37,6 @@ while not game_over:
         letter = chosen_word[index]
         if letter == guess_letter:
             display[index] = letter
-    print(f'Guessed letter: {guess_letter}')
     print(display)
     print(stages[lives])
 
