@@ -4,7 +4,7 @@ from hangman_art import stages, logo
 from hangman_words import word_list
 
 #Randomly choose a word from the word_list and assign it to a variable called chosen_word.
-chosen_word = word_list[random.randint(0, 2)]  # or random.choice(world_list)
+chosen_word = random.choice(word_list)  # or random.choice(world_list)
 length = len(chosen_word)
 #total lives
 lives = 6
