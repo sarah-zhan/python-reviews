@@ -71,8 +71,18 @@ def encrypt(message, number):
         encrypt_text += alphabet[new_index]
     print(f'The encoded text is {encrypt_text}')
 
+def decrypt(message, number):
+    decrypt_text = ''
+    for letter in message:
+        #shift each letter backward of the text in the alphabet by the shift amount and print the decrypt text
+        new_index = alphabet.index(letter) - number
+        if new_index < 0:
+            new_index += 26
+        decrypt_text += alphabet[new_index]
+    print(f'The decoded text is {decrypt_text}')
 
 
-
-encrypt(text, shift)
-
+if direction == 'encode':
+  encrypt(text, shift)
+elif direction == 'decode':
+  decrypt(text, shift)
