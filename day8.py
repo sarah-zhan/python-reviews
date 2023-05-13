@@ -45,3 +45,34 @@ def prime_checker(number):
 #Do NOT change any of the code below👇
 n = int(input("Check this number: "))
 prime_checker(number=n)
+
+##############################################################################
+#caesar cipher
+
+alphabet = [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+    'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+]
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+
+#Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
+def encrypt(message, number):
+    encrypt_text = ''
+    for letter in message:
+        # shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.
+        new_index = alphabet.index(letter) + number
+        #need to consider the next cycle if the letter is close to the end
+        if new_index > 25:
+            new_index -= 26
+        encrypt_text += alphabet[new_index]
+    print(f'The encoded text is {encrypt_text}')
+
+
+
+
+encrypt(text, shift)
+
