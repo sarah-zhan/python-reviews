@@ -23,3 +23,29 @@ for name in student_scores:
 
 print(student_grades)
 
+
+#########################################################
+#dictionary in list
+
+travel_log = [
+{
+  "country": "France",
+  "visits": 12,
+  "cities": ["Paris", "Lille", "Dijon"]
+},
+{
+  "country": "Germany",
+  "visits": 5,
+  "cities": ["Berlin", "Hamburg", "Stuttgart"]
+},
+]
+
+def add_new_country(country, visits, cities):
+  add_on = {}
+  add_on['country'] = country
+  add_on['visits'] = visits
+  add_on['cities'] = cities
+  travel_log.append(add_on)
+
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+print(travel_log)
