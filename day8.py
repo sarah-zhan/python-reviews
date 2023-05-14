@@ -54,35 +54,66 @@ alphabet = [
     'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ]
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
-
 #Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
-def encrypt(message, number):
-    encrypt_text = ''
-    for letter in message:
-        # shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.
-        new_index = alphabet.index(letter) + number
-        #need to consider the next cycle if the letter is close to the end
-        if new_index > 25:
-            new_index -= 26
-        encrypt_text += alphabet[new_index]
-    print(f'The encoded text is {encrypt_text}')
+# def encrypt(message, number):
+#     encrypt_text = ''
+#     for letter in message:
+#         # shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.
+#         new_index = alphabet.index(letter) + number
+#         #need to consider the next cycle if the letter is close to the end
+#         if new_index > 25:
+#             new_index -= 26
+#         encrypt_text += alphabet[new_index]
+#     print(f'The encoded text is {encrypt_text}')
 
-def decrypt(message, number):
-    decrypt_text = ''
-    for letter in message:
-        #shift each letter backward of the text in the alphabet by the shift amount and print the decrypt text
-        new_index = alphabet.index(letter) - number
-        if new_index < 0:
-            new_index += 26
-        decrypt_text += alphabet[new_index]
-    print(f'The decoded text is {decrypt_text}')
+# def decrypt(message, number):
+#     decrypt_text = ''
+#     for letter in message:
+#         #shift each letter backward of the text in the alphabet by the shift amount and print the decrypt text
+#         new_index = alphabet.index(letter) - number
+#         if new_index < 0:
+#             new_index += 26
+#         decrypt_text += alphabet[new_index]
+#     print(f'The decoded text is {decrypt_text}')
 
 
-if direction == 'encode':
-  encrypt(text, shift)
-elif direction == 'decode':
-  decrypt(text, shift)
+# if direction == 'encode':
+#   encrypt(text, shift)
+# elif direction == 'decode':
+#   decrypt(text, shift)
+
+
+def caesar(text, shift, direction):
+    new_text = ''
+    for letter in text:
+        if letter not in alphabet:
+            new_text += letter
+        else:
+            if direction == 'encode':
+                new_index = alphabet.index(letter) + shift
+                if new_index > 25:
+                    new_index += shift
+                new_text += alphabet[new_index]
+            elif direction == 'decode':
+                new_index = alphabet.index(letter) - shift
+                if new_index < 0:
+                    new_index += shift
+                new_text += alphabet[new_index]
+    print(f'The {direction}d text is: {new_text}')
+
+from art import logo
+print(logo)
+
+game_continue = True
+while game_continue:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    shift = shift % 26
+    caesar(text, shift, direction)
+
+    game_answer = input('Do you want to play the game again? yes to continue or no to exit \n')
+
+    if game_answer.lower() == 'no':
+        game_continue = False
+        print('See you next time.')
