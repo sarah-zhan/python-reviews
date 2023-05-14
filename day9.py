@@ -49,3 +49,8 @@ def add_new_country(country, visits, cities):
 
 add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
 print(travel_log)
+
+#########################################################
+#blind auction
+
+from replit import clear
