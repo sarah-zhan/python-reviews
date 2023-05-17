@@ -20,6 +20,21 @@ def calculate_score(cards):
         cards.append(1)
     return sum(cards)
 
+def compare(user_score, computer_score):
+  if user_score == computer_score:
+    return 'It is a draw 🤝'
+  elif computer_score == 0:
+    return 'You lose, computer got Blackjack 😿'
+  elif user_score == 0:
+    return 'You win 😀, Blackjack 🎆'
+  elif user_score > 21:
+    return 'You are bust 💥'
+  elif computer_score > 21:
+    return 'You win 😊. Computer is bust 💥 '
+  elif user_score > computer_score:
+    return 'You win 😀'
+  else:
+    return 'You lose 😒'
 
 
   # print(logo)
@@ -52,5 +67,5 @@ while computer_score != 0 and computer_score < 17:
   computer_cards.append(deal_card())
   computer_score = calculate_score(computer_cards)
 
-
+print(compare(user_score, computer_score))
 
