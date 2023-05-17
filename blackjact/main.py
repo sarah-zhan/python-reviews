@@ -1,7 +1,7 @@
 from art import logo
 from replit import clear
 import random
-game = True
+
 
 
 game_play = input("Do you want to play a game of Blackjack? Type 'y' to start the game or 'n' to exit: ")
@@ -20,16 +20,19 @@ def calculate_score(cards):
         cards.append(1)
     return sum(cards)
 
-while game:
 
-  print(logo)
+
+  # print(logo)
   #pick 2 cards for player, show total score, consider they have the same probability to be drawn
-  user_cards = []
-  computer_cards = []
-  for _ in range(0, 2):
-      user_cards.append(deal_card())
-      computer_cards.append(deal_card())
+user_cards = []
+computer_cards = []
+game_over = False
+for _ in range(0, 2):
+    user_cards.append(deal_card())
+    computer_cards.append(deal_card())
 
+while not game_over:
+  #while loop to repeat the game, until the user end the game
   user_score = calculate_score(user_cards)
   computer_score = calculate_score(computer_cards)
 
@@ -37,7 +40,13 @@ while game:
   print(f'Computer first card: {computer_cards[0]}')
 
   if user_score == 0 or computer_score == 0 or user_score > 21:
-    game = False
+    game_over = True
+  else:
+    get_another_card = input("Type 'y' to get another card, type 'n' to pass: ")
+    if get_another_card == 'y':
+      user_cards.append(deal_card())
+    else:
+      game_over = True
 
 
 
