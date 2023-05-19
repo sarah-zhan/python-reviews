@@ -15,6 +15,12 @@ def make_coffee():
   water = resources["water"] - MENU[my_coffee]["ingredients"]["water"]
   milk = resources["milk"] - MENU[my_coffee]["ingredients"]["milk"]
   coffee = resources["coffee"] - MENU[my_coffee]["ingredients"]["coffee"]
+
+  #show report
+  if my_coffee == 'report':
+    print(f"Water: {water}ml\nMilk: {milk}ml\nCoffee: {coffee}g")
+
+  #check whether machine has enough resources
   if water < 0:
     print("There is not enough water.")
     make_coffee()
