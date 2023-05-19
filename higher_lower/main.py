@@ -19,3 +19,11 @@ def compare(num1, num2):
   elif num1 < num2:
     return 'B'
 
+
+#game begin
+print(logo)
+print(choose_a())
+print(vs)
+print(choose_b())
+#ask user
+answer = input("Who has more followers? Type'A' or 'B': ")
