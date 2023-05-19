@@ -1,7 +1,7 @@
 from art import logo, vs
 from data import data
 import random
-from replit import clear
+# from replit import clear
 
 #get random choice
 def get_random_choice():
@@ -53,9 +53,9 @@ while game_continue:
   is_correct = compare(answer, option_a['follower_count'],
                        option_b['follower_count'])
 
-  clear()
+  # clear()
   print(logo)
-  
+
   if is_correct:
     score += 1
     print(f"You're right! Current score: {score}")
