@@ -22,11 +22,13 @@ def guess():
   return int(input("Make a guess: "))
 
 #compare numbers
-def check_answer(guess_number, target_number):
+def check_answer(guess_number, target_number, rounds):
   if guess_number > target_number:
-    print("Too high.\n")
+    print("Too high.")
+    return rounds - 1
   elif guess_number < target_number:
-    print("Too low.\n")
+    print("Too low.")
+    return rounds - 1
   else:
     print(f"You got it! Than answer was {guess_number}")
 
@@ -38,28 +40,30 @@ def set_level():
   else:
     return HARD_LEVEL
 
-#game begin, show logo
-print(logo)
+
 
 def game():
+  #game begin, show logo
+  print(logo)
   #welcome message
   print("Welcome to the Number Guessing Game!\n I'm thinking of a number between 1 and 100.  ")
   target_number = generate()
   print(f"sh....our answer is {target_number}")
 
-  attempt = set_level()
-  print(f"You have {attempt} attempts remaining to guess the number.")
-
-  # if attempt < 0:
-  #   print("You've run out of guesses, you lose")
-  #   game_over = True
+  rounds = set_level()
 
   guess_number = 0
   while guess_number != target_number:
+    print(f"You have {rounds} attempts remaining to guess the number.")
+
+    #guess a number
     guess_number = guess()
 
-    check_answer(guess_number, target_number)
-
+    #track the rounds
+    rounds = check_answer(guess_number, target_number, rounds)
+    if rounds == 0:
+      print("You run out of attempts. Game over.")
+      return
 
 game()
 
