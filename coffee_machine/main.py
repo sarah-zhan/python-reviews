@@ -21,41 +21,48 @@ def check_ingredients(coffee):
       resources[ingredient] -= MENU[coffee]["ingredients"][ingredient]
     return resources
 
+#machine is on
+is_on = True
+
+while is_on:
 #make coffee
-def make_coffee():
-  my_coffee = make_a_choice()
+  def make_coffee():
+    my_coffee = make_a_choice()
 
-  #show report
-  if my_coffee == 'report':
-    check_ingredients(my_coffee)
+    #show report
+    if my_coffee == 'report':
+      check_ingredients(my_coffee)
+    #turn off
+    elif make_coffee == 'off':
+      global is_on
+      is_on = False
+    else:
+      #check whether machine has enough resources
+      for ingredient in MENU[my_coffee]['ingredients']:
 
-  else:
-    #check whether machine has enough resources
-    for ingredient in MENU[my_coffee]['ingredients']:
-
-      if MENU[my_coffee]['ingredients'][ingredient] > resources[ingredient]:
-        print(f"There is not enough {ingredient}.")
-        make_coffee()
-
-      else:
-        print("Please insert coins.")
-        quarter = int(input("How many quarters?: "))
-        dime = int(input("How many dimes?: "))
-        nickle = int(input("How many nickles?: "))
-        penny = int(input("How many pennies?: "))
-        total = calculate_money(quarter, dime, nickle, penny)
-        cost = MENU[my_coffee]["cost"]
-
-        if total >= cost:
-          change = round(total - cost, 2)
-          print(f"Here is ${change} in change.")
-          print(f"Here is your {my_coffee} ☕. Enjoy!")
-          global revenue
-          revenue += cost
-          check_ingredients(my_coffee)
+        if MENU[my_coffee]['ingredients'][ingredient] > resources[ingredient]:
+          print(f"There is not enough {ingredient}.")
           make_coffee()
+
         else:
-          print("Sorry, there is not enough money. Money refunded.")
-          make_coffee()
+          print("Please insert coins.")
+          quarter = int(input("How many quarters?: "))
+          dime = int(input("How many dimes?: "))
+          nickle = int(input("How many nickles?: "))
+          penny = int(input("How many pennies?: "))
+          total = calculate_money(quarter, dime, nickle, penny)
+          cost = MENU[my_coffee]["cost"]
+
+          if total >= cost:
+            change = round(total - cost, 2)
+            print(f"Here is ${change} in change.")
+            print(f"Here is your {my_coffee} ☕. Enjoy!")
+            global revenue
+            revenue += cost
+            check_ingredients(my_coffee)
+            make_coffee()
+          else:
+            print("Sorry, there is not enough money. Money refunded.")
+            make_coffee()
 
 make_coffee()
