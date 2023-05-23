@@ -4,8 +4,9 @@ timmy = Turtle()
 print(timmy)
 timmy.shape("turtle")
 timmy.color("gold")
-my_screen = Screen()
+timmy.forward(100)
 
+my_screen = Screen()
 print(my_screen.canvheight)
 
 my_screen.exitonclick()
