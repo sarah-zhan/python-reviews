@@ -14,8 +14,10 @@ my_money_machine = MoneyMachine()
 is_on = True
 
 while is_on:
+    if my_coffee == "off":
+        is_on = False
     # print report
-    if my_coffee == "report":
+    elif my_coffee == "report":
         my_coffee_maker.report()
         my_money_machine.report()
     elif my_coffee not in (["latte", "espresso", "cappuccino"]):
