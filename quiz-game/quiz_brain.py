@@ -22,4 +22,5 @@ class QuizBrain:
         else:
             print(f"You are wrong. Your core is: {self.score}/{self.question_number}")
         print(f"Correct answer: {correct_answer}")
+        print("\n")
 
