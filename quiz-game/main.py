@@ -12,5 +12,5 @@ while quiz.still_has_questions():
     quiz.next_question()
 
 print("---------------------------")
-print(f"You've completed the quiz.\nYour final score is: {quiz.score}/12")
+print(f"You've completed the quiz.\nYour final score is: {quiz.score}/{len(quiz.question_list)}")
 print("---------------------------")
