@@ -34,8 +34,7 @@ def draw_dot(distance, size):
             timmy.dot(20, color)
             timmy.forward(distance)
 
-        timmy.backward(distance * (size + 1))
-        timmy.forward(distance)
+        timmy.backward(distance * size)
         timmy.left(90)
         timmy.forward(distance)
         timmy.right(90)
