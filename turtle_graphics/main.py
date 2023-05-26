@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
 import random
+
 timmy = Turtle()
 timmy.shape("turtle")
 timmy.color("black")
@@ -24,23 +25,38 @@ my_screen = Screen()
 
 # Setting the screen color-mode
 my_screen.colormode(255)
+
+
 # draw a triangle, square, pentagon, hexagon, heptagon, octagon, nonagon, decagon (3-10 sides)
-for number in range(3, 11):
+# for number in range(3, 11):
+#     r = random.randint(0, 255)
+#     b = random.randint(0, 255)
+#     g = random.randint(0, 255)
+#     timmy.pencolor(r, g, b)
+#     for _ in range(number):
+#         timmy.forward(100)
+#         timmy.right(360/number)
+
+# turtle random walk
+
+
+def random_walk():
     r = random.randint(0, 255)
     b = random.randint(0, 255)
     g = random.randint(0, 255)
+    s = random.randint(0, 10)
     timmy.pencolor(r, g, b)
-    for _ in range(number):
-        timmy.forward(100)
-        timmy.right(360/number)
+    timmy.pensize(width=10)
+    timmy.speed(s)
+    timmy.forward(30)
+    degree = random.choice([0, 90, 180, 270])
+    timmy.setheading(degree)
 
+
+for _ in range(1000):
+    random_walk()
 
 my_screen.exitonclick()
-
-my_screen = Screen()
-my_screen.exitonclick()
-
-
 # from prettytable import PrettyTable
 #
 # table = PrettyTable()
