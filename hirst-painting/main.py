@@ -26,6 +26,8 @@ screen.colormode(255)
 
 def draw_dot(distance, size):
     timmy.hideturtle()
+    timmy.penup()
+    timmy.goto(-200, -200)
     for i in range(size):
         for j in range(size):
             color = random.choice(color_list)
