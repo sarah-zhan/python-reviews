@@ -32,16 +32,13 @@ def draw_dot(distance, size):
         for j in range(size):
             color = random.choice(color_list)
             timmy.dot(20, color)
-            timmy.penup()
             timmy.forward(distance)
 
-        timmy.penup()
         timmy.backward(distance * (size + 1))
         timmy.forward(distance)
         timmy.left(90)
         timmy.forward(distance)
         timmy.right(90)
-        timmy.pendown()
 
 
 draw_dot(50, 10)
