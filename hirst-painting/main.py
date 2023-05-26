@@ -18,7 +18,7 @@ color_list = [(207, 159, 80), (55, 87, 130), (146, 91, 40), (140, 26, 50), (222,
 # draw 10 x 10, different color dots
 # dot is 20d, distance 50
 from turtle import Turtle, Screen
-
+import random
 timmy = Turtle()
 screen = Screen()
 screen.colormode(255)
@@ -26,10 +26,10 @@ screen.colormode(255)
 
 def draw_dot(distance, size):
     timmy.hideturtle()
-
     for i in range(size):
         for j in range(size):
-            timmy.dot()
+            color = random.choice(color_list)
+            timmy.dot(20, color)
             timmy.penup()
             timmy.forward(distance)
 
