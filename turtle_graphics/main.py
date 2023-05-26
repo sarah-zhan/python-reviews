@@ -38,23 +38,40 @@ my_screen.colormode(255)
 #         timmy.right(360/number)
 
 # turtle random walk
+# def random_walk():
+#     r = random.randint(0, 255)
+#     b = random.randint(0, 255)
+#     g = random.randint(0, 255)
+#     s = random.randint(0, 10)
+#     timmy.pencolor(r, g, b)
+#     timmy.pensize(width=10)
+#     timmy.speed(s)
+#     timmy.forward(30)
+#     degree = random.choice([0, 90, 180, 270])
+#     timmy.setheading(degree)
+#
+#
+# for _ in range(1000):
+#     random_walk()
 
 
-def random_walk():
+def random_color():
     r = random.randint(0, 255)
     b = random.randint(0, 255)
     g = random.randint(0, 255)
-    s = random.randint(0, 10)
-    timmy.pencolor(r, g, b)
-    timmy.pensize(width=10)
-    timmy.speed(s)
-    timmy.forward(30)
-    degree = random.choice([0, 90, 180, 270])
-    timmy.setheading(degree)
+    color = (r, g, b)
+    return color
 
 
-for _ in range(1000):
-    random_walk()
+def draw_spirograph():
+    timmy.speed(0)
+    for angle in range(0, 361, 4):
+        timmy.pencolor(random_color())
+        timmy.setheading(angle)
+        timmy.circle(50)
+
+
+draw_spirograph()
 
 my_screen.exitonclick()
 # from prettytable import PrettyTable
