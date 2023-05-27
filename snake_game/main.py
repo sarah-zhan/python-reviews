@@ -17,7 +17,7 @@ snake = Snake()
 food = Food()
 scoreboard = ScoreBoard()
 # initial scoreboard
-scoreboard.write(f"Score: {scoreboard.score}", move=False, align="center", font=("Arial", 11, "normal"))
+scoreboard.write(f"Score: {scoreboard.score}", move=False, align="center", font=("Courier", 20, "normal"))
 # use keyboard to change the direction
 screen.listen()
 screen.onkey(snake.up, "Up")
@@ -33,7 +33,7 @@ while game_on:
     time.sleep(0.1)
     snake.move()
 
-    # detect collision
+    # detect collision with food
     if snake.head.distance(food) < 15:
         food.move()
         # clear the record
@@ -41,9 +41,12 @@ while game_on:
         # update the score
         scoreboard.score += 1
         # show the scoreboard again
-        scoreboard.write(f"Score: {scoreboard.score}", move=False, align="center", font=("Arial", 11, "normal"))
+        scoreboard.write(f"Score: {scoreboard.score}", move=False, align="center", font=("Courier", 20, "normal"))
 
-
+    # detect collision with walls
+    if snake.head.xcor() > 295 or snake.head.xcor() < -295 or snake.head.ycor() > 295 or snake.head.ycor() < -295:
+        scoreboard.game_over()
+        game_on = False
 
 
 
