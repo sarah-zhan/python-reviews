@@ -9,16 +9,7 @@ screen.bgcolor("black")
 screen.title("Snake Game")
 # turn off tracer
 screen.tracer(0)
-# 3 single snake position
-positions = [(0, 0), (-20, 0), (-40, 0)]
-snakes = []
 
-for number in range(3):
-    snake = Turtle(shape="square")
-    snakes.append(snake)
-    snake.color("white")
-    snake.penup()
-    snake.goto(positions[number])
 
 
 game_on = True
@@ -27,12 +18,7 @@ while game_on:
     screen.update()
     # delay
     time.sleep(0.1)
-    for number in range(len(snakes) - 1, 0, -1):
-        # the snake replaced by the next snake, the last one to guide
-        x = snakes[number - 1].xcor()
-        y = snakes[number - 1].ycor()
-        snakes[number].goto(x, y)
-    snakes[0].forward(20)
+
 
 
 
