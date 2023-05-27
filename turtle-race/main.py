@@ -26,6 +26,7 @@ while game_on:
             winner = turtle
             if bet.lower() == winner.pencolor():
                 print("You win.")
+                print(f"The winner is {winner.pencolor()}.")
                 game_on = False
             else:
                 print("You lose.")
