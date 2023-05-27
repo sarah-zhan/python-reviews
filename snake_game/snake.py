@@ -13,10 +13,6 @@ class Snake:
         self.snakes = []
         self.create_snake()
         self.head = self.snakes[0]
-        self.up()
-        self.down()
-        self.left()
-        self.right()
 
     def create_snake(self):
         for number in POSITIONS:
