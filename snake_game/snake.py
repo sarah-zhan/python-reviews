@@ -1,4 +1,5 @@
 from turtle import Turtle
+
 POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 DISTANCE = 20
 
@@ -7,6 +8,11 @@ class Snake:
     def __init__(self):
         self.snakes = []
         self.create_snake()
+        self.head = self.snakes[0]
+        self.up()
+        self.down()
+        self.left()
+        self.right()
 
     def create_snake(self):
         for number in POSITIONS:
@@ -23,3 +29,15 @@ class Snake:
             y = self.snakes[number - 1].ycor()
             self.snakes[number].goto(x, y)
         self.snakes[0].forward(DISTANCE)
+
+    def up(self):
+        self.head.setheading(90)
+
+    def down(self):
+        self.head.setheading(270)
+
+    def left(self):
+        self.head.setheading(180)
+
+    def right(self):
+        self.head.setheading(0)
