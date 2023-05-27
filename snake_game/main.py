@@ -51,10 +51,8 @@ while game_on:
         game_on = False
 
     # detect collision with itself
-    for segment in snake.snakes:
-        if segment == snake.head:
-            pass
-        elif snake.head.distance(segment) < 10:
+    for segment in snake.snakes[1:]:
+        if snake.head.distance(segment) < 10:
             scoreboard.game_over()
             game_on = False
 
