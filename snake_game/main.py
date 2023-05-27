@@ -11,7 +11,7 @@ screen.bgcolor("black")
 # screen title
 screen.title("Snake Game")
 # turn off tracer
-screen.tracer(0)
+screen.tracer(5)
 
 snake = Snake()
 food = Food()
@@ -49,6 +49,15 @@ while game_on:
     if snake.head.xcor() > 295 or snake.head.xcor() < -295 or snake.head.ycor() > 295 or snake.head.ycor() < -295:
         scoreboard.game_over()
         game_on = False
+
+    # detect collision with itself
+    for segment in snake.snakes:
+        if segment == snake.head:
+            pass
+        elif snake.head.distance(segment) < 10:
+            scoreboard.game_over()
+            game_on = False
+
 
 
 
