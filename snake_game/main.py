@@ -8,12 +8,17 @@ screen.title("Snake Game")
 positions = [(0, 0), (-20, 0), (-40, 0)]
 turtles = []
 for number in range(3):
-    turtles.append(Turtle(shape="square"))
-    turtles[number].color("white")
-    turtles[number].goto(positions[number])
+    turtle = Turtle(shape="square")
+    turtles.append(turtle)
+    turtle.color("white")
+    turtle.penup()
+    turtle.goto(positions[number])
 
 
-
+game_on = True
+while game_on:
+    for turtle in turtles:
+        turtle.forward(100)
 
 
 
