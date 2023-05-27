@@ -31,7 +31,7 @@ while game_on:
 
     # detect collision
     if snake.head.distance(food) < 15:
-
+        food.move()
 
 
 
