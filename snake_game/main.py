@@ -28,7 +28,7 @@ while game_on:
     # delay
     time.sleep(0.1)
     for number in range(len(snakes) - 1, 0, -1):
-        # the snake replaced by
+        # the snake replaced by the next snake, the last one to guide
         x = snakes[number - 1].xcor()
         y = snakes[number - 1].ycor()
         snakes[number].goto(x, y)
