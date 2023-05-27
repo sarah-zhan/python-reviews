@@ -2,6 +2,7 @@ from turtle import Turtle, Screen
 
 # set up the screen
 screen = Screen()
+screen.title("Pong Game")
 screen.bgcolor("black")
 screen.setup(width=800, height=600)
 
