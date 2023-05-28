@@ -1,6 +1,7 @@
 from turtle import Turtle, Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import ScoreBoard
 import time
 # set up the screen
 screen = Screen()
@@ -28,6 +29,7 @@ right_paddle = Paddle((350, 0))
 left_paddle = Paddle((-350, 0))
 # ball
 ball = Ball()
+
 # key control
 screen.onkey(right_paddle.up, "Up")
 screen.onkey(right_paddle.down, "Down")
