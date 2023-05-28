@@ -51,18 +51,18 @@ while game_on:
     # update screen
     screen.update()
     # collision on top or bottom wall
-    if (ball.ycor() > 290) or (ball.ycor() < -290):
+    if (ball.ycor() > 280) or (ball.ycor() < -280):
         ball.bounce()
     # collision with paddle
-    if (ball.xcor() >= 340 or ball.xcor() <= -340) and \
+    if (ball.xcor() >= 330 or ball.xcor() <= -330) and \
             (ball.distance(right_paddle) < 50 or ball.distance(left_paddle) < 50):
         ball.catch()
     # miss right paddle
-    if ball.xcor() > 360:
+    if ball.xcor() > 380:
         ball.reset()
         scoreboard_left.win()
     # miss left paddle
-    if ball.xcor() < -360:
+    if ball.xcor() < -380:
         ball.reset()
         scoreboard_right.win()
 
