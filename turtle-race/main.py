@@ -22,7 +22,7 @@ if bet:
 
 while game_on:
     for turtle in turtles:
-        if turtle.xcor() == 240:
+        if turtle.xcor() > 240:
             winner = turtle
             if bet.lower() == winner.pencolor():
                 print("You win.")
