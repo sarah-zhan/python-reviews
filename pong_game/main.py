@@ -3,6 +3,7 @@ from paddle import Paddle
 from ball import Ball
 from scoreboard import ScoreBoard
 import time
+import random
 # set up the screen
 screen = Screen()
 screen.tracer(0)
@@ -31,10 +32,8 @@ left_paddle = Paddle((-350, 0))
 ball = Ball()
 # scoreboard right
 scoreboard_right = ScoreBoard()
-scoreboard_right.setposition(20, 260)
 # scoreboard left
 scoreboard_left = ScoreBoard()
-scoreboard_left.setposition(-30, 260)
 
 # key control
 screen.onkey(right_paddle.up, "Up")
@@ -44,12 +43,12 @@ screen.onkey(left_paddle.down, "s")
 
 game_on = True
 while game_on:
-    # delay the ball
-    time.sleep(0.1)
-    # ball move
-    ball.move()
     # update screen
     screen.update()
+    # delay the ball
+    time.sleep(ball.ball_speed)
+    # ball move
+    ball.move()
     # collision on top or bottom wall
     if (ball.ycor() > 280) or (ball.ycor() < -280):
         ball.bounce()
