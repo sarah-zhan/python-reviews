@@ -1,6 +1,7 @@
 from turtle import Turtle, Screen
 from paddle import Paddle
 from ball import Ball
+import time
 # set up the screen
 screen = Screen()
 screen.tracer(0)
@@ -27,16 +28,18 @@ right_paddle = Paddle((350, 0))
 left_paddle = Paddle((-350, 0))
 # ball
 ball = Ball()
+# key control
+screen.onkey(right_paddle.up, "Up")
+screen.onkey(right_paddle.down, "Down")
+screen.onkey(left_paddle.up, "w")
+screen.onkey(left_paddle.down, "s")
 
 game_on = True
 while game_on:
-    # key control
-    screen.onkey(right_paddle.up, "Up")
-    screen.onkey(right_paddle.down, "Down")
-    screen.onkey(left_paddle.up, "w")
-    screen.onkey(left_paddle.down, "s")
+    # delay the ball
+    time.sleep(0.1)
     # ball move
-
+    ball.move()
     # update screen
     screen.update()
 
