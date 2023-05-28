@@ -18,3 +18,6 @@ class Ball(Turtle):
     def bounce(self):
         # move to the opposite
         self.y_move *= -1
+
+    def catch(self):
+        self.x_move *= -1
