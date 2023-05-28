@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
 from paddle import Paddle
+from ball import Ball
 # set up the screen
 screen = Screen()
 screen.tracer(0)
@@ -24,6 +25,8 @@ for _ in range(30):
 right_paddle = Paddle((350, 0))
 # left paddle
 left_paddle = Paddle((-350, 0))
+# ball
+ball = Ball()
 
 game_on = True
 while game_on:
@@ -32,6 +35,8 @@ while game_on:
     screen.onkey(right_paddle.down, "Down")
     screen.onkey(left_paddle.up, "w")
     screen.onkey(left_paddle.down, "s")
+    # ball move
+
     # update screen
     screen.update()
 
