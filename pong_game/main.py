@@ -29,6 +29,12 @@ right_paddle = Paddle((350, 0))
 left_paddle = Paddle((-350, 0))
 # ball
 ball = Ball()
+# scoreboard right
+scoreboard_right = ScoreBoard()
+scoreboard_right.setposition(20, 260)
+# scoreboard left
+scoreboard_left = ScoreBoard()
+scoreboard_left.setposition(-30, 260)
 
 # key control
 screen.onkey(right_paddle.up, "Up")
@@ -52,11 +58,13 @@ while game_on:
             (ball.distance(right_paddle) < 50 or ball.distance(left_paddle) < 50):
         ball.catch()
     # miss right paddle
-    if ball.xcor() > 380:
+    if ball.xcor() > 360:
         ball.reset()
+        scoreboard_left.win()
     # miss left paddle
-    if ball.xcor() < -380:
+    if ball.xcor() < -360:
         ball.reset()
+        scoreboard_right.win()
 
 
 
