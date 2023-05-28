@@ -1,14 +1,14 @@
 from turtle import Turtle
 
 
-class RightPaddle(Turtle):
-    def __init__(self):
+class Paddle(Turtle):
+    def __init__(self, position):
         super().__init__()
         self.shape("square")
         self.shapesize(stretch_wid=5, stretch_len=1)
         self.color("white")
         self.penup()
-        self.setposition(350, 0)
+        self.setposition(position)
 
     def up(self):
         y = self.ycor() + 20
