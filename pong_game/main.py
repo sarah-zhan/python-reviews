@@ -2,6 +2,7 @@ from turtle import Turtle, Screen
 from paddle import RightPaddle
 # set up the screen
 screen = Screen()
+screen.tracer(30)
 screen.listen()
 screen.title("Pong Game")
 screen.bgcolor("black")
@@ -22,11 +23,13 @@ for _ in range(30):
 # right paddle
 right_paddle = RightPaddle()
 
-
-# key control
-screen.onkey(right_paddle.up, "Up")
-screen.onkey(right_paddle.down, "Down")
-
+game_on = True
+while game_on:
+    # key control
+    screen.onkey(right_paddle.up, "Up")
+    screen.onkey(right_paddle.down, "Down")
+    # update screen
+    screen.update()
 
 
 
