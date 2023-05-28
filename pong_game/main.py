@@ -2,6 +2,7 @@ from turtle import Turtle, Screen
 from paddle import RightPaddle
 # set up the screen
 screen = Screen()
+screen.listen()
 screen.title("Pong Game")
 screen.bgcolor("black")
 screen.setup(width=800, height=600)
@@ -22,7 +23,9 @@ for _ in range(30):
 right_paddle = RightPaddle()
 
 
-
+# key control
+screen.onkey(right_paddle.up, "Up")
+screen.onkey(right_paddle.down, "Down")
 
 
 

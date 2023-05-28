@@ -9,3 +9,11 @@ class RightPaddle(Turtle):
         self.color("white")
         self.penup()
         self.setposition(350, 0)
+
+    def up(self):
+        y = self.ycor() + 20
+        self.goto(self.xcor(), y)
+
+    def down(self):
+        y = self.ycor() - 20
+        self.goto(self.xcor(), y)
