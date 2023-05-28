@@ -60,11 +60,11 @@ while game_on:
     # miss right paddle
     if ball.xcor() > 380:
         ball.reset()
-        scoreboard_left.win()
+        scoreboard_left.l_win()
     # miss left paddle
     if ball.xcor() < -380:
         ball.reset()
-        scoreboard_right.win()
+        scoreboard_right.r_win()
 
 
 
