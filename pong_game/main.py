@@ -49,7 +49,12 @@ while game_on:
     if (ball.xcor() >= 340 or ball.xcor() <= -340) and \
             (ball.distance(right_paddle) < 50 or ball.distance(left_paddle) < 50):
         ball.catch()
-
+    # miss right paddle
+    if ball.xcor() > 380:
+        ball.reset()
+    # miss left paddle
+    if ball.xcor() < -380:
+        ball.reset()
 
 
 

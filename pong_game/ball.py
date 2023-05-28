@@ -10,6 +10,7 @@ class Ball(Turtle):
         self.x_move = 10
         self.y_move = 10
 
+
     def move(self):
         x = self.xcor() + self.x_move
         y = self.ycor() + self.y_move
@@ -21,3 +22,7 @@ class Ball(Turtle):
 
     def catch(self):
         self.x_move *= -1
+
+    def reset(self):
+        self.home()
+        self.catch()
