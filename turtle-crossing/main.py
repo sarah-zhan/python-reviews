@@ -4,6 +4,8 @@ from player import Player
 from car_manager import CarManager
 from scoreboard import Scoreboard
 
+FINISH_LINE_Y = 270
+SPEEDS = [1, 3, 6, 10, 0]
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
@@ -23,8 +25,10 @@ while game_is_on:
     time.sleep(0.2)
     screen.update()
 
-    if turtle.ycor() > 290:
+    # cross the road
+    if turtle.ycor() > FINISH_LINE_Y:
         turtle.back()
+        car.speed_up()
 
     car.generate_car()
     car.move()
@@ -34,6 +38,8 @@ while game_is_on:
         if each.distance(turtle) < 20:
             print("Game Over")
             game_is_on = False
+
+
 
 
 
