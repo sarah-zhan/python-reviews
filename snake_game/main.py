@@ -3,6 +3,7 @@ import time
 from snake import Snake
 from food import Food
 from scoreboard import ScoreBoard
+
 screen = Screen()
 # screen setup
 screen.setup(width=600, height=600)
@@ -16,8 +17,7 @@ screen.tracer(5)
 snake = Snake()
 food = Food()
 scoreboard = ScoreBoard()
-# initial scoreboard
-# scoreboard.write(f"Score: {scoreboard.score}", move=False, align="center", font=("Courier", 20, "normal"))
+
 # use keyboard to change the direction
 screen.listen()
 screen.onkey(snake.up, "Up")
@@ -48,21 +48,5 @@ while game_on:
     for segment in snake.snakes[1:]:
         if snake.head.distance(segment) < 10:
             scoreboard.update_highest_score()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 screen.exitonclick()

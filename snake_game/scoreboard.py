@@ -9,8 +9,9 @@ class ScoreBoard(Turtle):
         self.score = 0
         self.highest_score = 0
         self.hideturtle()
-
-        self.update_score()
+        self.clear()
+        self.write(f"Score: {self.score} Highest Score: {self.highest_score} ",
+                   align="center", font=("Courier", 20, "normal"))
 
     # def game_over(self):
     #     self.penup()

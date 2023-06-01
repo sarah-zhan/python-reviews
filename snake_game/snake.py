@@ -8,7 +8,7 @@ RIGHT = 0
 LEFT = 180
 
 
-class Snake():
+class Snake:
     def __init__(self):
         self.snakes = []
         self.create_snake()
