@@ -28,3 +28,9 @@ while game_is_on:
 
     car.generate_car()
     car.move()
+
+    # detect the distance (collision)
+    for each in car.cars:
+        if each.distance(turtle) < 20:
+            game_is_on = False
+            print("Game Over")
