@@ -28,6 +28,16 @@ class Snake:
     def extend(self):
         self.add_snake(self.snakes[-1].position())
 
+    # reset the snake when it hits the wall or itself
+    def reset(self):
+        # move the dead snake out of the screen
+        for snake in self.snakes:
+            snake.goto(500, 500)
+        # start fresh as initial
+        self.snakes.clear()
+        self.create_snake()
+        self.head = self.snakes[0]
+
     def move(self):
         for number in range(len(self.snakes) - 1, 0, -1):
             # the snake replaced by the next snake, the last one to guide
