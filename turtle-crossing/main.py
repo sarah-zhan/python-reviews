@@ -20,7 +20,7 @@ car = CarManager()
 game_is_on = True
 while game_is_on:
 
-    time.sleep(0.1)
+    time.sleep(0.2)
     screen.update()
 
     if turtle.ycor() > 290:
@@ -32,8 +32,9 @@ while game_is_on:
     # detect the distance (collision)
     for each in car.cars:
         if each.distance(turtle) < 20:
-            game_is_on = False
             print("Game Over")
+            game_is_on = False
+
 
 
 
