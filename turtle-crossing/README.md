@@ -8,3 +8,4 @@
 - cars speed increases when level up
 - scoreboard keeps track the level
 - show feedback game over when turtle is collided with a car
+![turtle_crossing.png](turtle_crossing.png)

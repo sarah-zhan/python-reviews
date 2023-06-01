@@ -41,6 +41,7 @@ while game_is_on:
     # detect the distance (collision)
     for each in car.cars:
         if each.distance(turtle) < 20:
+            scoreboard.goto(-90, 0)
             scoreboard.game_over()
             game_is_on = False
 
