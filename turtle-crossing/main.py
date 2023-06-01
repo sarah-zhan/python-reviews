@@ -14,11 +14,17 @@ turtle = Player()
 screen.listen()
 screen.onkey(turtle.move, "Up")
 
+# car
+car = CarManager()
 
 game_is_on = True
 while game_is_on:
+
     time.sleep(0.1)
     screen.update()
 
     if turtle.ycor() > 290:
         turtle.back()
+
+    car.generate_car()
+    car.move()
