@@ -19,6 +19,9 @@ screen.onkey(turtle.move, "Up")
 # car
 car = CarManager()
 
+# scoreboard
+scoreboard = Scoreboard()
+
 game_is_on = True
 while game_is_on:
 
