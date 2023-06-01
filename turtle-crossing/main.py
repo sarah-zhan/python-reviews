@@ -34,3 +34,8 @@ while game_is_on:
         if each.distance(turtle) < 20:
             game_is_on = False
             print("Game Over")
+
+
+
+
+screen.exitonclick()
