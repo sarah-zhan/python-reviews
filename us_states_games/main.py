@@ -25,10 +25,19 @@ import pandas
 # print(data[data.day == "Monday"].temp * 9/5 + 32)
 
 # create dataframe
-data_dict = {
-    "students": ["Amy", "James", "Angela"],
-    "scores": [76, 56, 65]
-}
-data = pandas.DataFrame(data_dict)
+# data_dict = {
+#     "students": ["Amy", "James", "Angela"],
+#     "scores": [76, 56, 65]
+# }
+# data = pandas.DataFrame(data_dict)
+# print(data)
+# data.to_csv("new_data.csv")
+
+data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
 print(data)
-data.to_csv("new_data.csv")
+
+
+
+
+
+
