@@ -16,8 +16,9 @@
 import pandas
 
 data = pandas.read_csv("weather_data.csv")
-# print(data)
-print(data["temp"])
+print(data)
+# print(data["temp"])
 # print(data.to_dict())
-print(data["temp"].mean())
-print(data["temp"].max())
+# print(data["temp"].mean())
+# print(data["temp"].max())
+print(data[data.temp == data.temp.max()])
