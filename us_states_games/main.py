@@ -34,7 +34,9 @@ import pandas
 # data.to_csv("new_data.csv")
 
 data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
-print(data)
+
+colors_count = data.groupby("Primary Fur Color")["Primary Fur Color"].count()
+colors_count.to_csv("squirrel_count.csv", header=["Count"])
 
 
 
