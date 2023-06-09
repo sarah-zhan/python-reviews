@@ -17,6 +17,9 @@ game_on = True
 
 while game_on:
     answer = screen.textinput(title=f"{score}/50 States correct", prompt="Tell me a State").title()
+
+    if answer == "Exit":
+        game_on = False
     # check whether the answer in the states list
     if answer in states_list and answer not in correct_answer:
         # if it is in the list, write the name
@@ -31,4 +34,4 @@ while game_on:
 
 
 
-screen.exitonclick()
+
