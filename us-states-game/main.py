@@ -22,12 +22,11 @@ while game_on:
     answer = screen.textinput(title=f"{score}/50 States correct", prompt="Tell me a State").title()
 
     if answer == "Exit":
-        # generate the missing list
-        missing_answer = []
-        for state in states_list:
-            if state not in correct_answer:
-                missing_answer.append(state)
+        # generate the missing list # use list comprehension
+        missing_answer = [state for state in states_list if state not in correct_answer]
+        # convert to dataframe
         df = pd.DataFrame(missing_answer)
+        # generate to csv
         df.to_csv("states_to_learn.csv")
         break
     # check whether the answer in the states list
