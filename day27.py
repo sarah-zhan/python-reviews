@@ -7,7 +7,8 @@ window.minsize(width=500, height=300)
 
 # label
 my_label = Label(text="label", font=("Arial", 24))
-my_label.pack()  # need pack to show the label
+my_label.grid(column=0, row=0)
+
 
 # tim = turtle.Turtle()
 # tim.write("testing")
@@ -18,12 +19,15 @@ def button_click():
     my_label["text"] = input.get()
 
 
-button = Button(text="Click Me", command=button_click)
-button.pack()
+button = Button(text="Button", command=button_click)
+button.grid(column=1, row=1)
+
+new_button = Button(text="New Button")
+new_button.grid(column=2, row=0)
 
 # entry
 input = Entry()
-input.pack()
+input.grid(column=3, row=2)
 
 # def add(*args):
 #     total = 0
