@@ -18,7 +18,7 @@ LONG_BREAK_MIN = 20
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Pomodoro")
-window.config(padx=100, pady=50, bg=YELLOW)
+window.config(padx=100, pady=40, bg=YELLOW)
 
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 tomato_img = PhotoImage(file="tomato.png")
@@ -29,5 +29,12 @@ canvas.grid(column=1, row=1)
 # label
 timer_label = Label(text="Timer", font=(FONT_NAME, 35, "bold"), bg=YELLOW, fg=GREEN)
 timer_label.grid(column=1, row=0)
+
+# button
+start_button = Button(text="Start", border=0.5)
+start_button.grid(column=0, row=2)
+reset_button = Button(text="Reset", border=0.5)
+reset_button.grid(column=2, row=2)
+
 
 window.mainloop()
