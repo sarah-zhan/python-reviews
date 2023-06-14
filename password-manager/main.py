@@ -1,28 +1,32 @@
 from tkinter import *
 from tkinter import messagebox
-
-# ---------------------------- PASSWORD GENERATOR ------------------------------- #
 import random
 
-letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-           'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-           'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
-nr_letters = random.randint(8, 10)
-nr_symbols = random.randint(2, 4)
-nr_numbers = random.randint(2, 4)
+# ---------------------------- PASSWORD GENERATOR ------------------------------- #
+def generate_password():
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+               'v',
+               'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
+               'R',
+               'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
-chosen_letters = [random.choice(letters) for letter in range(nr_letters)]
-chosen_symbols = [random.choice(symbols) for symbol in range(nr_symbols)]
-chosen_numbers = [random.choice(numbers) for number in range(nr_numbers)]
+    nr_letters = random.randint(8, 10)
+    nr_symbols = random.randint(2, 4)
+    nr_numbers = random.randint(2, 4)
 
-password_list = chosen_letters + chosen_symbols + chosen_numbers
+    chosen_letters = [random.choice(letters) for letter in range(nr_letters)]
+    chosen_symbols = [random.choice(symbols) for symbol in range(nr_symbols)]
+    chosen_numbers = [random.choice(numbers) for number in range(nr_numbers)]
 
-password = "".join(password_list)
+    password_list = chosen_letters + chosen_symbols + chosen_numbers
 
-print(f"Your password is: {password}")
+    password = "".join(password_list)
+
+    print(f"Your password is: {password}")
+    password_input.insert(0, password)
 
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
@@ -72,7 +76,7 @@ password_input = Entry(width=29)
 password_input.grid(column=1, row=3)
 
 # button
-password_button = Button(text="Generate Password", width=14, border=0)
+password_button = Button(text="Generate Password", width=14, border=0, command=generate_password)
 password_button.grid(column=2, row=3)
 
 add_button = Button(text="Add", width=40, height=1, highlightthickness=0, command=save)
