@@ -54,7 +54,7 @@ def count_down(num):
         minute = f"0{minute}"
     canvas.itemconfig(clock_text, text=f"{minute}:{second}")
     if num > 0:
-        timer = window.after(100, count_down, num - 1)
+        timer = window.after(1000, count_down, num - 1)
     else:
         start()
         check_mark = ""
