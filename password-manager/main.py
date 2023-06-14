@@ -25,14 +25,21 @@ password_label = Label(text="Password: ")
 password_label.grid(column=0, row=3)
 
 # input
-website_input = tkinter.Text(width=35, height=1)
+website_input = tkinter.Text(width=38, height=1)
 website_input.grid(column=1, row=1, columnspan=2)
 
-email_input = tkinter.Text(width=35, height=1)
+email_input = tkinter.Text(width=38, height=1)
 email_input.grid(column=1, row=2, columnspan=2)
 
-password_input = tkinter.Text(width=21, height=1)
+password_input = tkinter.Text(width=25, height=1)
 password_input.grid(column=1, row=3)
+
+# button
+password_button = Button(text="Generate Password", width=14, border=0)
+password_button.grid(column=2, row=3)
+
+add_button = Button(text="Add", width=42, height=1, highlightthickness=0)
+add_button.grid(column=1, row=4, columnspan=2)
 
 
 
