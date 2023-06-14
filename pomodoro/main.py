@@ -19,8 +19,8 @@ def start():
 def count_down(num):
     minute = math.floor(num / 60)
     second = num % 60
-    if second == 0:
-        second = "00"
+    if second < 10:
+        second = f"0{second}"
     if minute < 10:
         minute = f"0{minute}"
     canvas.itemconfig(clock_text, text=f"{minute}:{second}")
