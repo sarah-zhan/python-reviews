@@ -47,6 +47,11 @@ def count_down(num):
         window.after(100, count_down, num - 1)
     else:
         start()
+        check_mark = ""
+        complete = math.floor(reps / 2)
+        for _ in range(complete):
+            check_mark += "✔️"
+        check_label.config(text=check_mark)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -63,7 +68,7 @@ canvas.grid(column=1, row=1)
 # label
 timer_label = Label(text="Timer", font=(FONT_NAME, 35, "bold"), bg=YELLOW, fg=GREEN)
 timer_label.grid(column=1, row=0)
-check_label = Label(text="✔️", font=(20), bg=YELLOW, fg=GREEN, padx=30)
+check_label = Label(font=(20), bg=YELLOW, fg=GREEN)
 check_label.grid(column=1, row=3)
 
 # button
