@@ -8,7 +8,6 @@ def save():
     with open("data.txt", mode="a") as f:
         f.write(f"{website_input.get()} | {email_input.get()} | {password_input.get()}\n")
     website_input.delete(0, "end")
-    email_input.delete(0, "end")
     password_input.delete(0, "end")
 
 
