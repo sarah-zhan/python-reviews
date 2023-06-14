@@ -1,3 +1,4 @@
+import tkinter
 from tkinter import *
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -23,9 +24,15 @@ email_label.grid(column=0, row=2)
 password_label = Label(text="Password: ")
 password_label.grid(column=0, row=3)
 
+# input
+website_input = tkinter.Text(width=35, height=1)
+website_input.grid(column=1, row=1, columnspan=2)
 
+email_input = tkinter.Text(width=35, height=1)
+email_input.grid(column=1, row=2, columnspan=2)
 
-
+password_input = tkinter.Text(width=21, height=1)
+password_input.grid(column=1, row=3)
 
 
 
