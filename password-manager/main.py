@@ -32,27 +32,32 @@ def generate_password():
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
-    websit = website_input.get()
+    website = website_input.get()
     email = email_input.get()
     password = password_input.get()
     new_data = {
-        websit: {
+        website: {
             "email": email,
             "password": password,
         }
     }
-    if websit == "" or email == "" or password == "":
+    if website == "" or email == "" or password == "":
         messagebox.showwarning(title="Error", message="You cannot save empty fields.")
     else:
         is_ok = messagebox.askokcancel(title="Confirmation", message=f"Are you sure you want to save it?\n"
                                                                      f"Email: {email}\n"
                                                                      f"Passwords: {password}")
         if is_ok:
-            with open("data.json", mode="w") as f:
-                json.dump(new_data, f, indent=4)
+            # with open("data.json", mode="w") as f:
+            #     # write into json
+            #     json.dump(new_data, f, indent=4)
+            #     website_input.delete(0, "end")
+            #     password_input.delete(0, "end")
+            with open("data.json", mode="r") as f:
+                # read json
+                print(json.load(f))
                 website_input.delete(0, "end")
                 password_input.delete(0, "end")
-
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
