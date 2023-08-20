@@ -12,6 +12,8 @@ answer = input("Tell me a word: ").upper()
 # don't have to convert it to a list
 # list(answer.upper())
 
-
-answer_alphabet = [phonetic_alphabet_dict[letter] for letter in answer]
-print(answer_alphabet)
+try:
+    answer_alphabet = [phonetic_alphabet_dict[letter] for letter in answer]
+    print(answer_alphabet)
+except KeyError:
+    print("Sorry, only accept letters from the alphabet.")
