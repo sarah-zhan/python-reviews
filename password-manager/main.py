@@ -59,7 +59,7 @@ def save():
                     # write json
                     json.dump(new_data, f, indent=4)
             else:
-                 # update json
+                # update json
                 data.update(new_data)
 
                 with open("data.json", mode="w") as f:
@@ -68,6 +68,22 @@ def save():
             finally:
                 website_input.delete(0, "end")
                 password_input.delete(0, "end")
+
+
+# ---------------------------- SEARCH ------------------------------- #
+def search_password():
+    website = website_input.get()
+    try:
+        with open("data.json", mode="r") as f:
+            # read json
+            data = json.load(f)
+            print(data[website])
+            messagebox.showinfo(title=website, message=f"Email: {data[website]['email']}\n"
+                                                       f"Password: {data[website]['password']}")
+    except FileNotFoundError:
+        messagebox.showwarning(title="Error", message="No Data File Found.")
+    except KeyError:
+        messagebox.showwarning(title="Error", message="No Data File Found.")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -102,6 +118,8 @@ password_input = Entry(width=29)
 password_input.grid(column=1, row=3)
 
 # button
+search_button = Button(text="Search", width=14, border=0, command=search_password)
+search_button.grid(column=2, row=1)
 password_button = Button(text="Generate Password", width=14, border=0, command=generate_password)
 password_button.grid(column=2, row=3)
 
