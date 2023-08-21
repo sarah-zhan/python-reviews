@@ -4,6 +4,7 @@ import random
 import pyperclip
 import json
 
+
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def generate_password():
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
@@ -30,6 +31,7 @@ def generate_password():
     # copy the passwords
     pyperclip.copy(password)
 
+
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
     website = website_input.get()
@@ -48,16 +50,25 @@ def save():
                                                                      f"Email: {email}\n"
                                                                      f"Passwords: {password}")
         if is_ok:
-            # with open("data.json", mode="w") as f:
-            #     # write into json
-            #     json.dump(new_data, f, indent=4)
-            #     website_input.delete(0, "end")
-            #     password_input.delete(0, "end")
-            with open("data.json", mode="r") as f:
-                # read json
-                print(json.load(f))
+            try:
+                with open("data.json", mode="r") as f:
+                    # read json
+                    data = json.load(f)
+            except FileNotFoundError:
+                with open("data.json", mode="w") as f:
+                    # write json
+                    json.dump(new_data, f, indent=4)
+            else:
+                 # update json
+                data.update(new_data)
+
+                with open("data.json", mode="w") as f:
+                    # write json
+                    json.dump(data, f, indent=4)
+            finally:
                 website_input.delete(0, "end")
                 password_input.delete(0, "end")
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
