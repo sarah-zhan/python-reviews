@@ -83,7 +83,7 @@ def search_password():
     except FileNotFoundError:
         messagebox.showwarning(title="Error", message="No Data File Found.")
     except KeyError:
-        messagebox.showwarning(title="Error", message="No Data File Found.")
+        messagebox.showwarning(title="Error", message="No Data Found.")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
