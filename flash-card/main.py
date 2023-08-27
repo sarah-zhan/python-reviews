@@ -49,4 +49,6 @@ button_right.grid(column=1, row=1)
 button_wrong = Button(image=img_wrong, highlightthickness=0, command=review)
 button_wrong.grid(column=0, row=1)
 
+change_word()
+
 window.mainloop()
