@@ -24,7 +24,11 @@ def confirm_learn():
 def review():
     change_word()
 
-
+def show_english():
+    canvas.delete("Title")
+    canvas.create_text(400, 150, text="English", font=("Ariel", 40, "italic"), tags="Title")
+    canvas.delete("word")
+    word =
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Flashy")
