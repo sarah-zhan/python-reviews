@@ -36,7 +36,7 @@ img_right = PhotoImage(file="./images/right.png")
 img_wrong = PhotoImage(file="./images/wrong.png")
 
 canvas.create_image(400, 263, image=img_front)
-canvas.create_text(400, 150, text="Title", font=("Ariel", 40, "italic"), tags="Title")
+canvas.create_text(400, 150, text="French", font=("Ariel", 40, "italic"), tags="Title")
 canvas.create_text(400, 263, text="word", font=("Ariel", 60, "bold"), tags="word")
 canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
 canvas.grid(column=0, row=0, columnspan=2)
