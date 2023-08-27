@@ -8,7 +8,7 @@ window.title("Flashy")
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 
 
-canvas = Canvas(width=900, height=626)
+canvas = Canvas(width=800, height=526)
 img_front = PhotoImage(file="./images/card_front.png")
 img_back = PhotoImage(file="./images/card_back.png")
 img_right = PhotoImage(file="./images/right.png")
