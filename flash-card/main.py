@@ -15,7 +15,7 @@ img_right = PhotoImage(file="./images/right.png")
 img_wrong = PhotoImage(file="./images/wrong.png")
 
 canvas.create_image(400, 263, image=img_front)
-canvas.config(bg=BACKGROUND_COLOR)
+canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
 canvas.grid(column=0, row=0)
 
 #buttons
