@@ -14,8 +14,9 @@ img_back = PhotoImage(file="./images/card_back.png")
 img_right = PhotoImage(file="./images/right.png")
 img_wrong = PhotoImage(file="./images/wrong.png")
 
-canvas.create_image(400, 326, image=img_front)
-canvas.grid(column=0, row=1, columnspan=2)
+canvas.create_image(400, 263, image=img_front)
+canvas.config(bg=BACKGROUND_COLOR)
+canvas.grid(column=0, row=0)
 
 #buttons
 button_right = Button(image=img_right, highlightthickness=0)
