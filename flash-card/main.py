@@ -31,6 +31,7 @@ def show_english():
     global current
     canvas.itemconfig(card_title, text="English")
     canvas.itemconfig(card_word, text=current["English"])
+    canvas.itemconfig(card_background, image=img_back)
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -46,7 +47,7 @@ img_back = PhotoImage(file="./images/card_back.png")
 img_right = PhotoImage(file="./images/right.png")
 img_wrong = PhotoImage(file="./images/wrong.png")
 
-canvas.create_image(400, 263, image=img_front)
+card_background = canvas.create_image(400, 263, image=img_front)
 card_title = canvas.create_text(400, 150, text="Title", font=("Ariel", 40, "italic"), tags="Title")
 card_word = canvas.create_text(400, 263, text="word", font=("Ariel", 60, "bold"), tags="word")
 canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
