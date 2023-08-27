@@ -29,8 +29,8 @@ def review():
 
 def show_english():
     global current
-    canvas.itemconfig(card_title, text="English")
-    canvas.itemconfig(card_word, text=current["English"])
+    canvas.itemconfig(card_title, text="English", fill="white")
+    canvas.itemconfig(card_word, text=current["English"], fill="white")
     canvas.itemconfig(card_background, image=img_back)
 
 
