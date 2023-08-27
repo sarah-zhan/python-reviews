@@ -18,14 +18,14 @@ canvas.create_image(400, 263, image=img_front)
 canvas.create_text(400, 150, text="Title", font=("Ariel", 40, "italic"))
 canvas.create_text(400, 263, text="word", font=("Ariel", 60, "bold"))
 canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
-canvas.grid(column=0, row=0)
+canvas.grid(column=0, row=0, columnspan=2)
 
 #buttons
 button_right = Button(image=img_right, highlightthickness=0)
-button_right.grid(column=1, row=2)
+button_right.grid(column=1, row=1)
 
 button_wrong = Button(image=img_wrong, highlightthickness=0)
-button_wrong.grid(column=0, row=2)
+button_wrong.grid(column=0, row=1)
 
 
 
