@@ -6,9 +6,15 @@ BACKGROUND_COLOR = "#B1DDC6"
 
 data = pd.read_csv("./data/french_words.csv")
 data_dictionary_list = data.to_dict(orient='records')
-# print(data_dictionary_list)
+to_learn_list = data_dictionary_list.copy()
 
 current = {}
+
+
+def update_to_learn_list():
+    global to_learn_list
+    df = pd.DataFrame(to_learn_list)
+    df.to_csv("./data/words_to_learn.csv", index=False)
 
 
 def change_word():
@@ -23,6 +29,9 @@ def change_word():
 
 # confirm learn function
 def confirm_learn():
+    global to_learn_list, current
+    to_learn_list = [word for word in to_learn_list if word != current]
+    update_to_learn_list()
     change_word()
 
 
