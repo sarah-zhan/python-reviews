@@ -20,11 +20,17 @@ def update_to_learn_list():
 def change_word():
     global current, timer
     window.after_cancel(timer)
-    current = random.choice(data_dictionary_list)
-    canvas.itemconfig(card_title, text="French", fill="black")
-    canvas.itemconfig(card_word, text=current["French"], fill="black")
-    canvas.itemconfig(card_background, image=img_front)
-    timer = window.after(3000, func=show_english)
+    try:
+        current = random.choice(to_learn_list)
+    except FileNotFoundError:
+        current = random.choice(data_dictionary_list)
+    except KeyError:
+        current = random.choice(data_dictionary_list)
+    else:
+        canvas.itemconfig(card_title, text="French", fill="black")
+        canvas.itemconfig(card_word, text=current["French"], fill="black")
+        canvas.itemconfig(card_background, image=img_front)
+        timer = window.after(3000, func=show_english)
 
 
 # confirm learn function
