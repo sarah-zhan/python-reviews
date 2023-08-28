@@ -4,11 +4,18 @@ import random
 
 BACKGROUND_COLOR = "#B1DDC6"
 
-data = pd.read_csv("./data/french_words.csv")
-data_dictionary_list = data.to_dict(orient='records')
-to_learn_list = data_dictionary_list.copy()
-
 current = {}
+to_learn_list = {}
+
+try:
+    data = pd.read_csv("./data/words_to_learn.csv")
+except FileNotFoundError:
+    org_data = pd.read_csv("./data/french_words.csv")
+    data_dictionary_list = org_data.to_dict(orient='records')
+    to_learn_list = data_dictionary_list.copy()
+else:
+    data_dictionary_list = data.to_dict(orient='records')
+    to_learn_list = data_dictionary_list.copy()
 
 
 def update_to_learn_list():
@@ -20,17 +27,11 @@ def update_to_learn_list():
 def change_word():
     global current, timer
     window.after_cancel(timer)
-    try:
-        current = random.choice(to_learn_list)
-    except FileNotFoundError:
-        current = random.choice(data_dictionary_list)
-    except KeyError:
-        current = random.choice(data_dictionary_list)
-    else:
-        canvas.itemconfig(card_title, text="French", fill="black")
-        canvas.itemconfig(card_word, text=current["French"], fill="black")
-        canvas.itemconfig(card_background, image=img_front)
-        timer = window.after(3000, func=show_english)
+    current = random.choice(to_learn_list)
+    canvas.itemconfig(card_title, text="French", fill="black")
+    canvas.itemconfig(card_word, text=current["French"], fill="black")
+    canvas.itemconfig(card_background, image=img_front)
+    timer = window.after(3000, func=show_english)
 
 
 # confirm learn function
@@ -38,6 +39,7 @@ def confirm_learn():
     global to_learn_list, current
     to_learn_list = [word for word in to_learn_list if word != current]
     update_to_learn_list()
+    print(len(to_learn_list))
     change_word()
 
 
