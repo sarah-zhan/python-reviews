@@ -12,12 +12,13 @@ current = {}
 
 
 def change_word():
-    global current
+    global current, timer
+    window.after_cancel(timer)
     current = random.choice(data_dictionary_list)
     canvas.itemconfig(card_title, text="French", fill="black")
     canvas.itemconfig(card_word, text=current["French"], fill="black")
     canvas.itemconfig(card_background, image=img_front)
-    window.after(3000, func=show_english)
+    timer = window.after(3000, func=show_english)
 
 
 # confirm learn function
@@ -41,7 +42,7 @@ window = Tk()
 window.title("Flashy")
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 
-window.after(3000, func=show_english)
+timer = window.after(3000, func=show_english)
 
 canvas = Canvas(width=800, height=526)
 img_front = PhotoImage(file="./images/card_front.png")
