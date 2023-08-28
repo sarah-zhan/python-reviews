@@ -14,8 +14,10 @@ current = {}
 def change_word():
     global current
     current = random.choice(data_dictionary_list)
-    canvas.itemconfig(card_title, text="French")
-    canvas.itemconfig(card_word, text=current["French"])
+    canvas.itemconfig(card_title, text="French", fill="black")
+    canvas.itemconfig(card_word, text=current["French"], fill="black")
+    canvas.itemconfig(card_background, image=img_front)
+    window.after(3000, func=show_english)
 
 
 # confirm learn function
